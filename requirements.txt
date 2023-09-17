@@ -23,7 +23,5 @@ black==22.3.0
 
 jupyter
 pandas 
-numpy
-polars
 ruff
 nbval
