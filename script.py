@@ -7,7 +7,7 @@ import pandas as pd
 def summary_statistics(csv):
     df = read(csv)
     summary = df.describe()
-    summary.to_html("output/decribe_summary.html", index=False) 
+    summary.to_html("Output/decribe_summary.html", index=False) 
     return summary 
 
 def scatterplot(csv):
@@ -19,27 +19,30 @@ def scatterplot(csv):
     plt.xlabel('Rooms')
     plt.ylabel('Price')
     plt.grid(True)
-    plt.savefig("output/scatter.png", format="png")
+    plt.savefig("Output/Scatter_plot.png", format="png")
     plt.show()
 
 def boxplot(csv):
     df = read(csv)
     df.boxplot(by = 'Type', column=['Price'], grid = False)
-    plt.savefig(output_path, format="png")
-    plt.title("Boxplot: Melbourne Hosuing Price")
-    plt.savefig("output/boxplot.png", format="png")
+    plt.title("Boxplot: Melbourne Housing Price")
+    plt.savefig("Output/boxplot.png", format="png")
     plt.show()
 
 def piechart(csv):
     df = read(csv)
-    bedroom = df.iloc[:, 10] # 11th column (Bedroom2)
-    seller = df.iloc[:, 6] # 7th column (SellerG)
-    plt.pie(bedroom, seller, autopct="%.1f")
-    plt.axes().set_aspect("equal")
-    plt.title("Bedroom # distribution by seller")
-    plt.savefig("output/boxplot.png", format="png")
+    df['Modified_Bedroom'] = df['Bedroom2'].apply(lambda x: '5+' if x >= 5 else str(x))
+    bedroom_distribution = df['Modified_Bedroom'].value_counts()
+    bedroom_distribution = bedroom_distribution.drop('nan', errors='ignore')
+    plt.figure()
+    plt.pie(bedroom_distribution, labels=bedroom_distribution.index, autopct='%1.1f%%')
+    plt.title(f"Bedroom # distribution among all sellers")
+    plt.axis('equal')
+    plt.savefig("Output/Pie_chart.png", format="png")
     plt.show()
+
 
 def output_directory(directory="Output"):
     """Create output directory"""
     os.makedirs(directory, exist_ok=True)
+    
