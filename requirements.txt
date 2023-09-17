@@ -21,13 +21,9 @@ pytest-cov==4.0.0
 # Code formatting
 black==22.3.0
 
-# Code linting
-pylint==2.15.3
-
 jupyter
 pandas 
 numpy
 polars
 ruff
 nbval
-black_nbconvert
