@@ -7,6 +7,9 @@
 ***
 ## Summary
 This project demonstrates how continuous integration (CI) in Python-based data science projects could be implemented with GitHub Actions. The workflows encompass tasks such as code listing, formatting, dependency installation, and test execution. Essential procedures are therefore automatically triggered with each repository push and pull request, streamlining the development process. The primary benefit of using CI is that we can ensure overall code quality and consistency during the whole development process. Plus, these processes can be automated in the GitHub environment. 
+
+Dataset used: [Melbourne Housing Market](https://www.kaggle.com/datasets/anthonypino/melbourne-housing-market)
+
 ***
 
 ## Key components in the repository are:
@@ -43,5 +46,9 @@ A successful run will look like the following screenshot.
 
 ### 4. Pie Chart
 ![image](https://github.com/nogibjj/Individual_PJT_1/assets/141780408/255469a4-c425-4185-8b90-ce93d6e8bdd5)
+
+*** 
+
+## Video
 
 
