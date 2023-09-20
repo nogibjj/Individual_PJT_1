@@ -6,7 +6,7 @@ from mylib.lib import read
 def summary_statistics(csv):
     df = read(csv)
     summary = df.describe()
-    summary.to_html("Output/decribe_summary.html", index=False)
+    summary.to_html("resources/decribe_summary.html", index=False)
     return summary
 
 
@@ -19,7 +19,7 @@ def scatterplot(csv):
     plt.xlabel("Rooms")
     plt.ylabel("Price")
     plt.grid(True)
-    plt.savefig("Output/Scatter_plot.png", format="png")
+    plt.savefig("resources/Scatter_plot.png", format="png")
     plt.show()
 
 
@@ -27,7 +27,7 @@ def boxplot(csv):
     df = read(csv)
     df.boxplot(by="Type", column=["Price"], grid=False)
     plt.title("Boxplot: Melbourne Housing Price")
-    plt.savefig("Output/boxplot.png", format="png")
+    plt.savefig("resources/boxplot.png", format="png")
     plt.show()
 
 
@@ -40,7 +40,7 @@ def piechart(csv):
     plt.pie(bedroom_distribution, labels=bedroom_distribution.index, autopct="%1.1f%%")
     plt.title("Bedroom # distribution among all sellers")
     plt.axis("equal")
-    plt.savefig("Output/Pie_chart.png", format="png")
+    plt.savefig("resources/Pie_chart.png", format="png")
     plt.show()
 
 
