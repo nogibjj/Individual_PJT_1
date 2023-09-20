@@ -6,8 +6,6 @@ def test_output_directory():
     expected_directory = "Output"
     output_directory(expected_directory)
     assert os.path.exists(expected_directory)
-
-
 def test_summary_statistics():
     file = "Melbourne_housing.csv"
     new = summary_statistics(file)
